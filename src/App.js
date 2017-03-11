@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, IndexLink, Link, browserHistory, applyRouterMiddleware } from 'react-router';
 import Template from './components/Template';
+import Home from './components/Home';
+import SubredditPage from './components/SubredditPage';
+import NotFound from './components/NotFound';
 
 class App extends React.Component {
 
@@ -9,13 +12,13 @@ class App extends React.Component {
     return (
       <Router history={browserHistory}>
         <Route path="/" component={Template}>
-          <IndexRoute component={MainPage} />
+          <IndexRoute component={Home} />
+          <Route path="/r/:title" component={SubredditPage} />
           <Route path="*" component={NotFound} />
         </Route>
       </Router>
     );
   }
-
 }
 
 export default App;

@@ -2,3 +2,6 @@ body, html {
   background-color: #FFF;
   font-family: "Arial", sans-serif;
   color: #373737; }
+
+.subreddit-cluster {
+  display: flex; }
