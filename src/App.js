@@ -13,7 +13,7 @@ class App extends React.Component {
       <Router history={browserHistory}>
         <Route path="/" component={Template}>
           <IndexRoute component={Home} />
-          <Route path="/r/:title" component={SubredditPage} />
+          <Route path="/r/:display_name" component={SubredditPage} />
           <Route path="*" component={NotFound} />
         </Route>
       </Router>

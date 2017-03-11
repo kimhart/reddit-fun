@@ -12,7 +12,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     let _this = this;
-    fetch('https://www.reddit.com/.json').then(function(response) { 
+    fetch('https://www.reddit.com/subreddits/.json').then(function(response) { 
       return response.json();
     }).then(function(j) {
       let subreddits = j.data.children.map(obj => obj.data);
@@ -24,7 +24,9 @@ class Home extends React.Component {
     return (
       <div className="main">
         <h1 className="page-title">Reddit Lite</h1>
-        {this.state.subreddits.map((subreddit) => <SubredditCluster key={subreddit.id} {...subreddit} /> )}
+        <div className="subreddits">
+          {this.state.subreddits.map((subreddit) => <SubredditCluster key={subreddit.id} {...subreddit} /> )}
+        </div>
       </div>
     );
   }

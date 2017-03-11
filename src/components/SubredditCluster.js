@@ -3,20 +3,18 @@ import { Router, Route, IndexRoute, IndexLink, Link, browserHistory, applyRouter
 
 class SubredditCluster extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    let { title, thumbnail, permalink } = this.props;
-    let query = { title, thumbnail, permalink };
+    let { display_name, public_description, subscribers, title, url } = this.props;
+    let query = { display_name, public_description, subscribers, title, url };
+
     return (
-      <Link to={{ pathname: `/r/${title}`, query}}>
-        <div className="subreddit-cluster">
-          <img className="subreddit-thumbnail" alt={`${title} Thumbnail`} src={thumbnail} />
+      <div className="subreddit-cluster">
+        <Link to={{ pathname: `r/${display_name}`, query}}>
           <p className="subreddit-title">{title}</p>
-        </div>
-      </Link>
+        </Link>
+        <p className="subreddit-description">{public_description}</p>
+        <p className="subreddit-subs">{subscribers.toLocaleString()} subscribers</p>
+      </div>
     );
   }
 }

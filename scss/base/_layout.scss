@@ -2,8 +2,68 @@ body, html {
   background-color: #FFF;
   font-family: $brand-font;
   color: $text-gray;
+  a, a:hover, a:active, a:visited {
+    text-decoration: none;
+  }
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
 }
 
 .subreddit-cluster {
-  display: flex;
+  margin: 30px auto;
+  .subreddit-title {
+    margin: 5px auto;
+  }
+  .subreddit-description {
+    border: 1px solid $border-gray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px auto;
+    a {
+      color: $navy-blue;
+    }
+  }
+  .subreddit-subs {
+    font-size: 11px;
+    color: lighten($text-gray, 15%);
+    margin-top: 0px;
+  }
 }
+
+.post-cluster {
+  display: inline-flex;
+  justify-content: flex-start;
+  margin: 10px auto;
+  width: 100%;
+  border: 1px solid $border-gray;
+  box-shadow: 3px 3px 2px lighten($border-gray, 10%);
+  p {
+    margin: 10px;
+    &.post-info, &.post-subs {
+      font-size: 11px;
+      margin: 0 10px 5px 10px;
+    }
+    .post-author {
+      color: $navy-blue;
+    }
+  }
+  .image {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    .thumbnail {
+      margin: 5px;
+      max-height: 70px;
+      max-width: 70px;
+    }
+  } 
+}
+
+
+
+
+

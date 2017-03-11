@@ -1,4 +1,5 @@
 import React from 'react';
+import Post from './PostCluster';
 
 class SubredditPage extends React.Component {
 
@@ -11,7 +12,7 @@ class SubredditPage extends React.Component {
 
   componentDidMount() {
     let _this = this;
-    fetch(`http://www.reddit.com/${this.props.location.query.permalink}.json`).then(function(response) { 
+    fetch(`http://www.reddit.com${this.props.location.query.url}.json`).then(function(response) { 
       return response.json();
     }).then(function(j) {
       let posts = j.data.children.map(obj => obj.data);
@@ -21,10 +22,13 @@ class SubredditPage extends React.Component {
   }
 
   render() {
-    let {title, permalink, thumbnail } = this.props.location.query;
+    let { title } = this.props.location.query;
     return (
       <div className="main">
         <h1>{title}</h1>
+        <div className="posts">
+          {this.state.posts.map((post) => <Post key={post.id} {...post} /> )}
+        </div>
       </div>
     );
   }
