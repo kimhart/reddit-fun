@@ -30,14 +30,17 @@ body, html {
   display: inline-flex;
   justify-content: flex-start;
   margin: 10px auto;
+  padding: 5px;
   width: 100%;
   border: 1px solid #d0d0d0;
   box-shadow: 3px 3px 2px #eaeaea; }
   .post-cluster p {
     margin: 10px; }
-    .post-cluster p.post-info, .post-cluster p.post-subs {
-      font-size: 11px;
+    .post-cluster p.post-info, .post-cluster p.post-comments {
+      font-size: 12px;
       margin: 0 10px 5px 10px; }
+    .post-cluster p.post-comments {
+      font-weight: 700; }
     .post-cluster p .post-author {
       color: #287CB5; }
   .post-cluster .image {
