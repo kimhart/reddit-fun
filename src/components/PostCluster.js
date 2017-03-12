@@ -3,15 +3,23 @@ import { Router, Route, IndexRoute, IndexLink, Link, browserHistory, applyRouter
 
 class PostCluster extends React.Component {
 
-  getTimeStamp = () => {
-    let date = new Date(this.props.created_utc);
-    let stamp = date.toString("MMM dd"); 
-    console.log(stamp);
-    // timeStamp.toString();
-    // let difference = today - timeStamp;
-    // let seconds = (difference * 1000)
-    // let hour = seconds * 3600;
-    // console.log(timeStamp)
+  getElapsedHours = () => {
+    const seconds = this.props.created_utc;
+    // convert seconds to date string relative to epoch time
+    const epoch = new Date(1970, 0, 1);
+    const timeStamp = new Date(epoch.setSeconds(seconds));
+    // find time elapsed between post creation and now (in milliseconds)
+    const now = new Date();
+    const delta = timeStamp - now;
+    // convert milliseconds to hours, add the time zone offset, round down.
+    const currentTimeZoneOffsetInHours = now.getTimezoneOffset() / 60;
+    const hoursElapsed = Math.floor(Math.abs((delta / 1000) / 3600) + currentTimeZoneOffsetInHours);
+    // display appropriate language per # of hours
+    if (hoursElapsed < 1) {
+      return 'less than 1 hour';
+    } else if (hoursElapsed === 1) {
+      return `${hoursElapsed} hour`;
+    } return `${hoursElapsed} hours`;
   }
 
   render() {
@@ -26,7 +34,7 @@ class PostCluster extends React.Component {
           <Link to={{ pathname: `${url}`, query}}>
             <p className="post-title">{title}</p>
           </Link>
-          <p className="post-info">submitted {this.getTimeStamp()} hours ago by <span className="post-author">{author}</span></p>
+          <p className="post-info">Submitted {this.getElapsedHours()} ago by <span className="post-author">{author}</span></p>
           <p className="post-comments">{num_comments.toLocaleString()} comments</p>
         </div>
       </div>
