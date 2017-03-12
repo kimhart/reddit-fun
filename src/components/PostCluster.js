@@ -25,13 +25,16 @@ class PostCluster extends React.Component {
   render() {
     let { author, created_utc, num_comments, permalink, score, subreddit, thumbnail, title, url } = this.props;
     let query = { author, created_utc, num_comments, permalink, score, subreddit, thumbnail, title, url };
+    console.log(this.props);
     return (
       <div className="post-cluster">
         <div className="image">
-          <img className="thumbnail" src={thumbnail} alt={subreddit} />
+          <Link to={{ pathname: `${permalink}`, query}}>
+            <img className="thumbnail" src={thumbnail} alt={subreddit} />
+          </Link>
         </div>
         <div className="description">
-          <Link to={{ pathname: `${url}`, query}}>
+          <Link to={{ pathname: `${permalink}`, query}}>
             <p className="post-title">{title}</p>
           </Link>
           <p className="post-info">Submitted {this.getElapsedHours()} ago by <span className="post-author">{author}</span></p>

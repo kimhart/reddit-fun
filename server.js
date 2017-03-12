@@ -12,6 +12,7 @@ app.use(bodyParser.json({limit: '2mb'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static('public'));
 app.use('/:url', express.static('public'));
+app.use('/:permalink', express.static('public'));
 
 app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, 'public', 'index.html'))

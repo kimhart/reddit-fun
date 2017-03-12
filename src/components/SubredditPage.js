@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from './PostCluster';
+import PostCluster from './PostCluster';
 
 class SubredditPage extends React.Component {
 
@@ -27,7 +27,7 @@ class SubredditPage extends React.Component {
       <div className="main">
         <h1>{title}</h1>
         <div className="posts">
-          {this.state.posts.map((post) => <Post key={post.id} {...post} /> )}
+          {this.state.posts.slice(0, 25).map((post) => <PostCluster key={post.id} {...post} /> )}
         </div>
       </div>
     );

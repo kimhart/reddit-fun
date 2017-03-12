@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, IndexLink, Link, browserHistory, applyRouter
 import Template from './components/Template';
 import Home from './components/Home';
 import SubredditPage from './components/SubredditPage';
+import PostPage from './components/PostPage';
 import NotFound from './components/NotFound';
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
         <Route path="/" component={Template}>
           <IndexRoute component={Home} />
           <Route path="/r/:display_name" component={SubredditPage} />
+          <Route path="/:permalink" component={PostPage} />
           <Route path="*" component={NotFound} />
         </Route>
       </Router>
