@@ -1,0 +1,20 @@
+.subreddit-cluster {
+  margin: 30px auto;
+  .subreddit-title {
+    margin: 5px auto;
+  }
+  .subreddit-description {
+    border: 1px solid $border-gray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px auto;
+    a {
+      color: $navy-blue;
+    }
+  }
+  .subreddit-subs {
+    font-size: 11px;
+    color: lighten($text-gray, 15%);
+    margin-top: 0px;
+  }
+}

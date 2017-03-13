@@ -1,0 +1,56 @@
+.post-cluster {
+  display: inline-flex;
+  justify-content: flex-start;
+  margin: 10px auto;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid $border-gray;
+  box-shadow: 3px 3px 2px lighten($border-gray, 10%);
+  a.comments {
+    color: $text-gray;
+  }
+  p {
+    margin: 10px;
+    &.post-info, &.post-comments {
+      font-size: 12px;
+      margin: 0 10px 5px 10px;
+    }
+    &.post-comments {
+      font-weight: 700;
+    }
+    &.post-score {
+      color: $border-gray;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    span.post-author {
+      color: $navy-blue;
+    }
+  }
+  .score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 50px;
+    p {
+      margin: 5px;
+    }
+  }
+  .image {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    .thumbnail {
+      margin: 5px;
+      max-height: 90px;
+      max-width: 90px;
+    }
+  } 
+}
+
+.post-page {
+  .post-photo {
+    width: 100%;
+  }
+}

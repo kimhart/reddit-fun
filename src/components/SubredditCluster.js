@@ -9,9 +9,7 @@ class SubredditCluster extends React.Component {
 
     return (
       <div className="subreddit-cluster">
-        <Link to={{ pathname: `r/${display_name}`, query}}>
-          <p className="subreddit-title">{title}</p>
-        </Link>
+        <p className="subreddit-title"><Link to={{ pathname: `r/${display_name}`, query}}>{title}</Link></p>
         <p className="subreddit-description">{public_description}</p>
         <p className="subreddit-subs">{subscribers.toLocaleString()} subscribers</p>
       </div>

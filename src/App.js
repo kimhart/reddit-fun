@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, IndexLink, Link, browserHistory, applyRouterMiddleware } from 'react-router';
+import { Router, Route, IndexRoute, IndexLink, Link, browserHistory } from 'react-router';
 import Template from './components/Template';
 import Home from './components/Home';
 import SubredditPage from './components/SubredditPage';
