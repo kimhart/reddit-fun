@@ -51,8 +51,22 @@ body, html {
     &.post-comments {
       font-weight: 700;
     }
-    .post-author {
+    &.post-score {
+      color: $border-gray;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    span.post-author {
       color: $navy-blue;
+    }
+  }
+  .score {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 50px;
+    p {
+      margin: 5px;
     }
   }
   .image {
@@ -61,8 +75,8 @@ body, html {
     align-items: center;
     .thumbnail {
       margin: 5px;
-      max-height: 70px;
-      max-width: 70px;
+      max-height: 90px;
+      max-width: 90px;
     }
   } 
 }

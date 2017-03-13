@@ -41,13 +41,24 @@ body, html {
       margin: 0 10px 5px 10px; }
     .post-cluster p.post-comments {
       font-weight: 700; }
-    .post-cluster p .post-author {
+    .post-cluster p.post-score {
+      color: #d0d0d0;
+      font-size: 16px;
+      font-weight: 700; }
+    .post-cluster p span.post-author {
       color: #287CB5; }
+  .post-cluster .score {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 50px; }
+    .post-cluster .score p {
+      margin: 5px; }
   .post-cluster .image {
     margin: 0 20px;
     display: flex;
     align-items: center; }
     .post-cluster .image .thumbnail {
       margin: 5px;
-      max-height: 70px;
-      max-width: 70px; }
+      max-height: 90px;
+      max-width: 90px; }

@@ -11,7 +11,7 @@ class PostCluster extends React.Component {
     // find time elapsed between post creation and now (in milliseconds)
     const now = new Date();
     const delta = timeStamp - now;
-    // convert milliseconds to hours, add the time zone offset, round down.
+    // convert milliseconds to hours, add the time zone offset (in hours), round down to whole number
     const currentTimeZoneOffsetInHours = now.getTimezoneOffset() / 60;
     const hoursElapsed = Math.floor(Math.abs((delta / 1000) / 3600) + currentTimeZoneOffsetInHours);
     // display appropriate language per # of hours/days
@@ -37,6 +37,11 @@ class PostCluster extends React.Component {
     console.log(this.props);
     return (
       <div className="post-cluster">
+        <div className="score">
+        <p>⬆️</p>
+        <p className="post-score">{score}</p>
+        <p>⬇️</p>
+        </div>
         <div className="image">
           <Link to={{ pathname: `${permalink}`, query}}>
             <img className="thumbnail" src={thumbnail} alt={subreddit} />
