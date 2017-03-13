@@ -11,6 +11,7 @@ Make sure you have [Node.js](https://nodejs.org/en/) installed, and run:
 Your app should now be running on [localhost:3000](http://localhost:3000/).
 
 ## Running the tests
+Currently only checks that the home page component mounts on startup.
 
 `$ npm test`
 
@@ -26,13 +27,14 @@ Upon saving, `build-css` runs and recompiles your updated Sass to main.css.
 * React.js
 * Node.js
 * Sass
-* Fetch
+* Fetch API
 * Reddit API
 * Webpack
 * React Router
 * Mocha
 * Chai
 * Sinon
+* Enzyme
 
 ## Author
 * Kim Hart
