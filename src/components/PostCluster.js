@@ -14,12 +14,21 @@ class PostCluster extends React.Component {
     // convert milliseconds to hours, add the time zone offset, round down.
     const currentTimeZoneOffsetInHours = now.getTimezoneOffset() / 60;
     const hoursElapsed = Math.floor(Math.abs((delta / 1000) / 3600) + currentTimeZoneOffsetInHours);
-    // display appropriate language per # of hours
-    if (hoursElapsed < 1) {
-      return 'less than 1 hour';
-    } else if (hoursElapsed === 1) {
-      return `${hoursElapsed} hour`;
-    } return `${hoursElapsed} hours`;
+    // display appropriate language per # of hours/days
+    if (hoursElapsed > 24) {
+      if (hoursElapsed > 48) {
+        const days = Math.floor(hoursElapsed / 24);
+        return `${days} days`;
+      } return `${days} day`;
+    } else {
+      if (hoursElapsed === 1) {
+        return `${hoursElapsed} hour`;
+      } else if (hoursElapsed < 1) {
+        return 'less than 1 hour';
+      } else {
+        return `${hoursElapsed} hours`;
+      }
+    }
   }
 
   render() {
