@@ -6,16 +6,23 @@ class SubredditPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: []
+      posts: [],
+      interval: null
     }
   }
 
   componentDidMount() {
     this.getData();
-    setInterval(() => {this.getData()}, 60 * 1000); 
+    let interval = setInterval(() => {this.getData()}, 60 * 1000);
+    this.setState({interval}) 
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.interval);
   }
 
   getData = () => {
+    console.log('getting')
     let _this = this;
     fetch(`http://www.reddit.com${this.props.location.query.url}.json`).then(function(response) { 
       return response.json();
