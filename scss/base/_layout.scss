@@ -1,5 +1,6 @@
 body, html {
   background-color: #FFF;
+  margin: 0;
   font-family: $brand-font;
   color: $text-gray;
   a, a:hover, a:active, a:visited {
@@ -7,10 +8,22 @@ body, html {
   }
 }
 
-.main {
-  width: 80%;
+h1 {
+  width: 100%;
+  background-color: $sky-blue;
+  margin: 0;
+  padding: 20px 5%;
+  color: #FFF;
+}
+
+.main, .posts, .subreddits, .post-page {
+  width: 100%;
   margin: 0 auto;
   display: block;
+}
+
+.posts, .subreddits, .post-page {
+  width: 90%;
 }
 
 .subreddit-cluster {

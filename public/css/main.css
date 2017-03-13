@@ -1,14 +1,25 @@
 body, html {
   background-color: #FFF;
+  margin: 0;
   font-family: "Arial", sans-serif;
   color: #373737; }
   body a, body a:hover, body a:active, body a:visited, html a, html a:hover, html a:active, html a:visited {
     text-decoration: none; }
 
-.main {
-  width: 80%;
+h1 {
+  width: 100%;
+  background-color: #5CBFEE;
+  margin: 0;
+  padding: 20px 5%;
+  color: #FFF; }
+
+.main, .posts, .subreddits, .post-page {
+  width: 100%;
   margin: 0 auto;
   display: block; }
+
+.posts, .subreddits, .post-page {
+  width: 90%; }
 
 .subreddit-cluster {
   margin: 30px auto; }

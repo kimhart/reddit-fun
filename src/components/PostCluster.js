@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute, IndexLink, Link, browserHistory, applyRouterMiddleware } from 'react-router';
+import { Link } from 'react-router';
 
 class PostCluster extends React.Component {
 
@@ -33,7 +33,7 @@ class PostCluster extends React.Component {
 
   render() {
     const { author, created_utc, id, num_comments, permalink, score, subreddit, thumbnail, title, url } = this.props;
-    const query = { author, created_utc, num_comments, permalink, score, title, url };
+    const query = { author, created_utc, num_comments, permalink, score, subreddit, title, url };
     return (
       <div className="post-cluster">
         <div className="score">
@@ -41,11 +41,13 @@ class PostCluster extends React.Component {
         <p className="post-score">{score}</p>
         <p>⬇️</p>
         </div>
+        { thumbnail && 
         <div className="image">
           <Link to={{ pathname: `/${id}`, query}}>
             <img className="thumbnail" src={thumbnail} alt={subreddit} />
           </Link>
         </div>
+        }
         <div className="description">
           <Link to={{ pathname: `/${id}`, query}}>
             <p className="post-title">{title}</p>
