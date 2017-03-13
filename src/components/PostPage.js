@@ -11,9 +11,8 @@ class PostPage extends React.Component {
         <div className="post-page">
           <h2>{title}</h2>
           <h3>Posted by: {author}</h3>
-          <p><a className="comments" target="_blank" href={`https://reddit.com${permalink}`}>Comments</a></p>
+          <p><a className="comments" target="_blank" href={`https://reddit.com${permalink}`}>View post + comments on Reddit</a></p>
           <img className="post-photo" src={url} alt={title} />
-          <p><a target="_blank" href={`https://reddit.com${url}`}>Go to the source!</a></p>
         </div>
       </div>
     );

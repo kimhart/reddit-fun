@@ -23,7 +23,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="main">
-        <h1 className="page-title">Reddit Lite</h1>
+        <h1 className="page-title">Diet Reddit Lite</h1>
         <div className="subreddits">
           {this.state.subreddits.map((subreddit) => <SubredditCluster className="subreddit-clusters" key={subreddit.id} {...subreddit} /> )}
         </div>
