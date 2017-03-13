@@ -5,6 +5,12 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/"
   },
+  externals: {
+    'cheerio': 'window',
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
+  },
   devServer: {
     inline: "true",
     contentBase: __dirname + "/public"
@@ -16,7 +22,7 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: "babel",
         query: {
-          presets: [ "react", "es2015", "stage-0" ]
+          presets: [ "react", "airbnb", "es2015", "stage-0" ]
         }
       }
     ]

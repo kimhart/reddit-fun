@@ -12,15 +12,30 @@ Your app should now be running on [localhost:3000](http://localhost:3000/).
 
 ## Running the tests
 
+`$ npm test`
+
+## Updating Styles
+
+The following command will watch for changes to all Sass files:
+
+`$ npm run watch-css`
+
+Upon saving, the build command runs and recompiles your updated Sass to main.css:
+
+`$ npm run build-css`
+
+
 ## Built With
 * React.js
 * Node.js
-* SASS
+* Sass
 * Fetch
 * Reddit API
 * Webpack
 * React Router
 * Mocha
+* Chai
+* Sinon
 
 ## Author
 * Kim Hart
