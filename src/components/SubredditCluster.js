@@ -6,12 +6,13 @@ class SubredditCluster extends React.Component {
   render() {
     let { display_name, public_description, subscribers, title, url } = this.props;
     let query = { display_name, public_description, subscribers, title, url };
+    let subsFormatted = subscribers.toLocaleString();
 
     return (
       <div className="subreddit-cluster">
         <p className="subreddit-title"><Link to={{ pathname: `r/${display_name}`, query}}>{title}</Link></p>
         <p className="subreddit-description">{public_description}</p>
-        <p className="subreddit-subs">{subscribers.toLocaleString()} subscribers</p>
+        <p className="subreddit-subs">{subsFormatted} subscribers</p>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-# Reddit Lite
+# Diet Reddit Lite
 A super scaled-down version of Reddit that automatically pings Reddit's data every minute without losing scroll position or refreshing page.The user can navigate to any subreddit and view a list of 25 posts. Clicking on the post will show a basic post page or allow you to navigate to the external link.
 
 ## Getting Started
@@ -20,10 +20,7 @@ The following command will watch for changes to all Sass files:
 
 `$ npm run watch-css`
 
-Upon saving, the build command runs and recompiles your updated Sass to main.css:
-
-`$ npm run build-css`
-
+Upon saving, `build-css` runs and recompiles your updated Sass to main.css.
 
 ## Built With
 * React.js
