@@ -1,6 +1,9 @@
 # Diet Reddit Lite
 A super scaled-down version of Reddit that automatically pings Reddit's data every minute without losing scroll position or refreshing page.The user can navigate to any subreddit and view a list of 25 posts. Clicking on the post will show a basic post page or allow you to navigate to the external link.
 
+<img src="home.png" width="350px" height="auto">
+<img src="funny.png" width="350px" height="auto">
+
 ## Getting Started
 Make sure you have [Node.js](https://nodejs.org/en/) installed, and run:
 
