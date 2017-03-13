@@ -15,7 +15,7 @@ class App extends React.Component {
         <Route path="/" component={Template}>
           <IndexRoute component={Home} />
           <Route path="/r/:display_name" component={SubredditPage} />
-          <Route path="/:permalink" component={PostPage} />
+          <Route path="/:id" component={PostPage} />
           <Route path="*" component={NotFound} />
         </Route>
       </Router>

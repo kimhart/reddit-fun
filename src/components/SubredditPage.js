@@ -11,12 +11,16 @@ class SubredditPage extends React.Component {
   }
 
   componentDidMount() {
+    this.getData();
+    setInterval(() => {this.getData()}, 60 * 1000); 
+  }
+
+  getData = () => {
     let _this = this;
     fetch(`http://www.reddit.com${this.props.location.query.url}.json`).then(function(response) { 
       return response.json();
     }).then(function(j) {
       let posts = j.data.children.map(obj => obj.data);
-      console.log(posts);
       _this.setState({ posts });
     })
   }

@@ -2,28 +2,16 @@ import React from 'react';
 
 class PostPage extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      post: {}
-    }
-  }
-
-  // componentDidMount() {
-  //   let _this = this;
-  //   fetch(`http://www.reddit.com${this.props.location.query.permalink}.json`).then(function(response) { 
-  //     return response.json();
-  //   }).then(function(j) {
-  //     let posts = j.data.children.map(obj => obj.data);
-  //     console.log(posts);
-  //     _this.setState({ posts });
-  //   })
-  // }
-
   render() {
+    const { author, created_utc, num_comments, permalink, score, subreddit, thumbnail, title, url } = this.props.location.query;
     return (
       <div className="main">
-        <h1>This is a post</h1>
+        <div className="post-page">
+          <h1>{title}</h1>
+          <h3>Posted by: {author}</h3>
+          <a className="comments" target="_blank" href={`https://reddit.com${permalink}`}>Comments</a>
+          <img className="post-photo" src={url} alt={title} />
+        </div>
       </div>
     );
   }

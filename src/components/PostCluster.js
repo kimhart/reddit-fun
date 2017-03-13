@@ -16,8 +16,8 @@ class PostCluster extends React.Component {
     const hoursElapsed = Math.floor(Math.abs((delta / 1000) / 3600) + currentTimeZoneOffsetInHours);
     // display appropriate language per # of hours/days
     if (hoursElapsed > 24) {
+      const days = Math.floor(hoursElapsed / 24);
       if (hoursElapsed > 48) {
-        const days = Math.floor(hoursElapsed / 24);
         return `${days} days`;
       } return `${days} day`;
     } else {
@@ -32,9 +32,8 @@ class PostCluster extends React.Component {
   }
 
   render() {
-    let { author, created_utc, num_comments, permalink, score, subreddit, thumbnail, title, url } = this.props;
-    let query = { author, created_utc, num_comments, permalink, score, subreddit, thumbnail, title, url };
-    console.log(this.props);
+    const { author, created_utc, id, num_comments, permalink, score, subreddit, thumbnail, title, url } = this.props;
+    const query = { author, created_utc, num_comments, permalink, score, title, url };
     return (
       <div className="post-cluster">
         <div className="score">
@@ -43,16 +42,16 @@ class PostCluster extends React.Component {
         <p>⬇️</p>
         </div>
         <div className="image">
-          <Link to={{ pathname: `${permalink}`, query}}>
+          <Link to={{ pathname: `/${id}`, query}}>
             <img className="thumbnail" src={thumbnail} alt={subreddit} />
           </Link>
         </div>
         <div className="description">
-          <Link to={{ pathname: `${permalink}`, query}}>
+          <Link to={{ pathname: `/${id}`, query}}>
             <p className="post-title">{title}</p>
           </Link>
           <p className="post-info">Submitted {this.getElapsedHours()} ago by <span className="post-author">{author}</span></p>
-          <p className="post-comments">{num_comments.toLocaleString()} comments</p>
+          <p className="post-comments"><a className="comments" target="_blank" href={`https://reddit.com${permalink}`}>{num_comments.toLocaleString()} comments</a></p>
         </div>
       </div>
     );

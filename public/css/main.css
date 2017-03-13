@@ -34,6 +34,8 @@ body, html {
   width: 100%;
   border: 1px solid #d0d0d0;
   box-shadow: 3px 3px 2px #eaeaea; }
+  .post-cluster a.comments {
+    color: #373737; }
   .post-cluster p {
     margin: 10px; }
     .post-cluster p.post-info, .post-cluster p.post-comments {
@@ -50,6 +52,7 @@ body, html {
   .post-cluster .score {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     min-width: 50px; }
     .post-cluster .score p {
@@ -62,3 +65,6 @@ body, html {
       margin: 5px;
       max-height: 90px;
       max-width: 90px; }
+
+.post-page .post-photo {
+  width: 100%; }
