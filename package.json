@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Subreddit Challenge",
   "scripts": {
-    "prestart": "node_modules/babel-cli/bin/babel-node.js --presets react,airbnb,es2015,stage-0 && npm install && webpack",
-    "start": "node_modules/babel-cli/bin/babel-node.js --presets react,airbnb,es2015,stage-0 server.js",
+    "start": "node_modules/babel-cli/bin/babel-node.js server.js",
     "test": "mocha -w --require test/helpers/browser.js test/*.spec.js",
     "build-css": "./bin/build-css",
     "watch-css": "./bin/watch-css"
