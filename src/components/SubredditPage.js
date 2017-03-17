@@ -5,6 +5,7 @@ class SubredditPage extends React.Component {
 
   constructor(props) {
     super(props);
+    this.getData = this.getData.bind(this);
     this.state = {
       posts: [],
       interval: null
@@ -21,14 +22,15 @@ class SubredditPage extends React.Component {
     clearInterval(this.state.interval);
   }
 
-  getData = () => {
-    console.log('getting')
+  getData() {
     let _this = this;
-    fetch(`http://www.reddit.com${this.props.location.query.url}.json`).then(function(response) { 
+    let url = this.props ? this.props.location.query.url : null;
+    fetch(`http://www.reddit.com/${url}.json`).then(function(response) { 
       return response.json();
     }).then(function(j) {
-      let posts = j.data.children.map(obj => obj.data);
+      let posts = j.data ? j.data.children.map(obj => obj.data) : null;
       _this.setState({ posts });
+      return posts
     })
   }
 
